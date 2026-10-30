@@ -37,38 +37,76 @@ export default function Projetos() {
               >
                 <div>
                   {/* Capa do Projeto */}
-                  <div className="relative w-full aspect-[16/10] bg-[#030817] overflow-hidden border-b border-white/10">
-                    <Image
-                      src={projeto.imagem}
-                      alt={`Apresentação da solução ${projeto.nome}`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
+                  {hasPublicLink && projeto.linkPublico ? (
+                    <a
+                      href={projeto.linkPublico}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block relative w-full aspect-[16/10] bg-[#030817] overflow-hidden border-b border-white/10 cursor-pointer"
+                      tabIndex={-1}
+                      aria-label={`Acessar plataforma ${projeto.nome}`}
+                    >
+                      <Image
+                        src={projeto.imagem}
+                        alt={`Apresentação da solução ${projeto.nome}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
 
-                    {/* Badge de Segmento sobre a imagem */}
-                    <div className="absolute top-3 left-3 z-10">
-                      <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#030817]/85 border border-[#00C8FF]/30 text-[#00C8FF] backdrop-blur-md shadow-md">
-                        {projeto.segmento}
-                      </span>
-                    </div>
-
-                    {/* Indicador de Disponibilidade */}
-                    {projeto.emBreve && (
-                      <div className="absolute top-3 right-3 z-10">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-[#FF8500]/20 border border-[#FF8500]/40 text-[#FF8500] backdrop-blur-md">
-                          <Clock className="w-3 h-3" />
-                          Link público em breve
+                      {/* Badge de Segmento sobre a imagem */}
+                      <div className="absolute top-3 left-3 z-10">
+                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#030817]/85 border border-[#00C8FF]/30 text-[#00C8FF] backdrop-blur-md shadow-md">
+                          {projeto.segmento}
                         </span>
                       </div>
-                    )}
-                  </div>
+                    </a>
+                  ) : (
+                    <div className="relative w-full aspect-[16/10] bg-[#030817] overflow-hidden border-b border-white/10">
+                      <Image
+                        src={projeto.imagem}
+                        alt={`Apresentação da solução ${projeto.nome}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+
+                      {/* Badge de Segmento sobre a imagem */}
+                      <div className="absolute top-3 left-3 z-10">
+                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#030817]/85 border border-[#00C8FF]/30 text-[#00C8FF] backdrop-blur-md shadow-md">
+                          {projeto.segmento}
+                        </span>
+                      </div>
+
+                      {/* Indicador de Disponibilidade */}
+                      {projeto.emBreve && (
+                        <div className="absolute top-3 right-3 z-10">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-[#FF8500]/20 border border-[#FF8500]/40 text-[#FF8500] backdrop-blur-md">
+                            <Clock className="w-3 h-3" />
+                            Link público em breve
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  )}
 
                   {/* Informações do Projeto */}
                   <div className="p-6">
                     <h3 className="font-heading text-xl font-bold text-white mb-2 group-hover:text-[#00C8FF] transition-colors">
-                      {projeto.nome}
+                      {hasPublicLink && projeto.linkPublico ? (
+                        <a
+                          href={projeto.linkPublico}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline focus:outline-none"
+                        >
+                          {projeto.nome}
+                        </a>
+                      ) : (
+                        projeto.nome
+                      )}
                     </h3>
 
                     <p className="text-sm text-[#AAB8CD] leading-relaxed mb-6">

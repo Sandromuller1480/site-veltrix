@@ -34,7 +34,7 @@ export const projetos: Projeto[] = [
     descricao:
       "Plataforma digital voltada à organização e à gestão de serviços odontológicos e de estética facial, com uma experiência visual alinhada ao segmento de saúde.",
     etiquetas: ["Saúde", "Gestão", "Plataforma digital"],
-    imagem: "/imagens/projetos/harmonie-odonto.svg",
+    imagem: "/imagens/projetos/harmonie-odonto.png",
     linkPublico: "https://harmonie-odonto.vercel.app/",
     emBreve: false,
     destaque: true,
@@ -46,7 +46,7 @@ export const projetos: Projeto[] = [
     descricao:
       "Solução digital para uma empresa do setor de motocicletas, reunindo apresentação de produtos e recursos de gestão para apoiar as atividades do negócio.",
     etiquetas: ["E-commerce", "Gestão", "Motocicletas"],
-    imagem: "/imagens/projetos/tecnomotos.svg",
+    imagem: "/imagens/projetos/tecnomotos.png",
     linkPublico: "https://tecnomotos-jdsx.vercel.app/",
     emBreve: false,
     destaque: true,
@@ -58,10 +58,22 @@ export const projetos: Projeto[] = [
     descricao:
       "Plataforma voltada ao relacionamento entre lojas e profissionais de pintura, com uma proposta de fidelização e benefícios.",
     etiquetas: ["Fidelização", "Plataforma", "Pintura"],
-    imagem: "/imagens/projetos/pintor-premium.svg",
+    imagem: "/imagens/projetos/pintor-premium.png",
     linkPublico: "https://www.pintorpremium.com/",
     emBreve: false,
     destaque: false,
+  },
+  {
+    id: "filezinho",
+    nome: "Filézinho",
+    segmento: "Gastronomia & Delivery",
+    descricao:
+      "Plataforma de cardápio digital interativo e gestão de pedidos para o segmento gastronômico, com navegação intuitiva, combos e apresentação atrativa de produtos.",
+    etiquetas: ["Cardápio digital", "Delivery", "Gastronomia"],
+    imagem: "/imagens/projetos/filezinho.png",
+    linkPublico: "https://app-filezinho.vercel.app/",
+    emBreve: false,
+    destaque: true,
   },
   {
     id: "pintor-pro",
@@ -70,8 +82,7 @@ export const projetos: Projeto[] = [
     descricao:
       "Plataforma criada para aproximar clientes e profissionais de pintura, facilitando a apresentação dos serviços e o contato entre as partes.",
     etiquetas: ["Marketplace", "Pintura", "Serviços"],
-    imagem: "/imagens/projetos/pintor-pro.svg",
-    // Link público em breve - insira a URL pública final quando estiver disponível:
+    imagem: "/imagens/projetos/pintor-pro.png",
     linkPublico: undefined,
     emBreve: true,
     destaque: false,
@@ -79,12 +90,11 @@ export const projetos: Projeto[] = [
   {
     id: "trabalhe-livre",
     nome: "Trabalhe Livre",
-    segmento: "Plataforma digital",
+    segmento: "Plataforma de serviços",
     descricao:
-      "Projeto digital desenvolvido pela VELTRIX. Mais informações serão apresentadas em breve.",
-    etiquetas: ["Plataforma digital", "Solução personalizada"],
-    imagem: "/imagens/projetos/trabalhe-livre.svg",
-    // Link público em breve - insira a URL pública final quando estiver disponível:
+      "Plataforma para conectar clientes a profissionais qualificados em diversas áreas de serviços em todo o Brasil, com apresentação de portfólios e contratação ágil.",
+    etiquetas: ["Marketplace", "Serviços", "Plataforma digital"],
+    imagem: "/imagens/projetos/trabalhe-livre.png",
     linkPublico: undefined,
     emBreve: true,
     destaque: false,
