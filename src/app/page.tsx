@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import ParallaxBackground from "@/components/ParallaxBackground";
-import Hero from "@/components/Hero";
+import HeroSlider from "@/components/HeroSlider";
 import Sobre from "@/components/Sobre";
 import Servicos from "@/components/Servicos";
 import PrototipoGratuito from "@/components/PrototipoGratuito";
@@ -22,7 +22,7 @@ export default function Home() {
       {/* Conteúdo Principal com todas as seções institucionais */}
       <main id="conteudo-principal">
         {/* 1. Hero */}
-        <Hero />
+        <HeroSlider />
 
         {/* 2. Sobre a VELTRIX */}
         <Sobre />
