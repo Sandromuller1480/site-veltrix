@@ -42,39 +42,41 @@ export default function Projetos() {
                       href={projeto.linkPublico}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block relative w-full aspect-[16/10] bg-[#030817] overflow-hidden border-b border-white/10 cursor-pointer"
+                      className="block relative w-full bg-[#030817] overflow-hidden border-b border-white/10 cursor-pointer"
                       tabIndex={-1}
                       aria-label={`Acessar plataforma ${projeto.nome}`}
                     >
                       <Image
                         src={projeto.imagem}
                         alt={`Apresentação da solução ${projeto.nome}`}
-                        fill
+                        width={1900}
+                        height={867}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-auto block transition-all duration-300 group-hover:brightness-105"
                         loading="lazy"
                       />
 
                       {/* Badge de Segmento sobre a imagem */}
-                      <div className="absolute top-3 left-3 z-10">
+                      <div className="absolute top-3 left-3 z-10 pointer-events-none">
                         <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#030817]/85 border border-[#00C8FF]/30 text-[#00C8FF] backdrop-blur-md shadow-md">
                           {projeto.segmento}
                         </span>
                       </div>
                     </a>
                   ) : (
-                    <div className="relative w-full aspect-[16/10] bg-[#030817] overflow-hidden border-b border-white/10">
+                    <div className="relative w-full bg-[#030817] overflow-hidden border-b border-white/10">
                       <Image
                         src={projeto.imagem}
                         alt={`Apresentação da solução ${projeto.nome}`}
-                        fill
+                        width={1900}
+                        height={867}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-auto block transition-all duration-300 group-hover:brightness-105"
                         loading="lazy"
                       />
 
                       {/* Badge de Segmento sobre a imagem */}
-                      <div className="absolute top-3 left-3 z-10">
+                      <div className="absolute top-3 left-3 z-10 pointer-events-none">
                         <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#030817]/85 border border-[#00C8FF]/30 text-[#00C8FF] backdrop-blur-md shadow-md">
                           {projeto.segmento}
                         </span>
@@ -82,7 +84,7 @@ export default function Projetos() {
 
                       {/* Indicador de Disponibilidade */}
                       {projeto.emBreve && (
-                        <div className="absolute top-3 right-3 z-10">
+                        <div className="absolute top-3 right-3 z-10 pointer-events-none">
                           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-[#FF8500]/20 border border-[#FF8500]/40 text-[#FF8500] backdrop-blur-md">
                             <Clock className="w-3 h-3" />
                             Link público em breve
