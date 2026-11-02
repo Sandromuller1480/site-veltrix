@@ -155,7 +155,7 @@ export default function Header() {
             : "opacity-0 pointer-events-none -translate-y-4"
         }`}
         style={{
-          backgroundColor: "rgba(3, 8, 23, 0.82)",
+          backgroundColor: "#030817",
           backdropFilter: "blur(64px)",
           WebkitBackdropFilter: "blur(64px)",
         }}
