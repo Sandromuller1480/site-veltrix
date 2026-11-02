@@ -83,8 +83,8 @@ export const projetos: Projeto[] = [
       "Plataforma criada para aproximar clientes e profissionais de pintura, facilitando a apresentação dos serviços e o contato entre as partes.",
     etiquetas: ["Marketplace", "Pintura", "Serviços"],
     imagem: "/imagens/projetos/pintor-pro.png",
-    linkPublico: undefined,
-    emBreve: true,
+    linkPublico: "https://pintor-pro.vercel.app/",
+    emBreve: false,
     destaque: false,
   },
   {
@@ -95,8 +95,8 @@ export const projetos: Projeto[] = [
       "Plataforma para conectar clientes a profissionais qualificados em diversas áreas de serviços em todo o Brasil, com apresentação de portfólios e contratação ágil.",
     etiquetas: ["Marketplace", "Serviços", "Plataforma digital"],
     imagem: "/imagens/projetos/trabalhe-livre.png",
-    linkPublico: undefined,
-    emBreve: true,
+    linkPublico: "https://trabalhe-livre-taupe.vercel.app/",
+    emBreve: false,
     destaque: false,
   },
 ];
