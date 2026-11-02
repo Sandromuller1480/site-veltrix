@@ -20,8 +20,6 @@ export default function Hero() {
               <span className="text-xs sm:text-sm font-semibold tracking-wide text-[#00C8FF]">
                 SOLUÇÕES DIGITAIS
               </span>
-              <span className="text-[#AAB8CD]/50 hidden sm:inline">•</span>
-              <span className="text-xs text-[#AAB8CD] hidden sm:inline">VELTRIX Digital Solutions</span>
             </div>
 
             {/* Título Principal Exato */}

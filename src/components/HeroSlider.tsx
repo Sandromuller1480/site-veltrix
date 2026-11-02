@@ -135,8 +135,6 @@ export default function HeroSlider() {
                 <span className="text-xs font-semibold tracking-wide text-[#00C8FF]">
                   SOLUÇÕES DIGITAIS
                 </span>
-                <span className="text-[#AAB8CD]/50">•</span>
-                <span className="text-xs text-[#AAB8CD]">VELTRIX Digital Solutions</span>
               </div>
 
               {/* Título dinâmico */}
