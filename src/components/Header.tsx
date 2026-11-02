@@ -157,9 +157,9 @@ export default function Header() {
             : "opacity-0 pointer-events-none -translate-y-4"
         }`}
         style={{
-          backgroundColor: "#030817",
-          backdropFilter: "blur(64px)",
-          WebkitBackdropFilter: "blur(64px)",
+          backgroundColor: "rgba(3, 8, 23, 0.5)",
+          backdropFilter: "blur(50px)",
+          WebkitBackdropFilter: "blur(50px)",
         }}
       >
         <nav
