@@ -84,9 +84,6 @@ export default function Header() {
               <span className="font-heading text-lg sm:text-xl font-bold tracking-wider text-white group-hover:text-[#00C8FF] transition-colors">
                 VELTRIX
               </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.2em] font-medium text-[#AAB8CD] -mt-1 uppercase">
-                Tecnologia com identidade
-              </span>
             </div>
           </Link>
 
