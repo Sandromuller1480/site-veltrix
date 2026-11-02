@@ -13,6 +13,7 @@ const SLIDES = [
     sublabel:
       "Criamos sites modernos, rápidos e com identidade visual alinhada ao seu negócio.",
     image: "/imagens/hero/desenvolvimento-de-sites.png",
+    mobileImage: "/imagens/hero/mobile/desenvolvimento-de-sites.webp",
     accent: "#00C8FF",
   },
   {
@@ -21,6 +22,7 @@ const SLIDES = [
     sublabel:
       "Sistemas sob medida para automatizar processos e impulsionar sua operação.",
     image: "/imagens/hero/desenvolvimento-de-sistemas.png",
+    mobileImage: "/imagens/hero/mobile/desenvolvimento-de-sistemas.webp",
     accent: "#0066FF",
   },
   {
@@ -29,6 +31,7 @@ const SLIDES = [
     sublabel:
       "Aplicativos iOS e Android com experiência fluida e design que converte.",
     image: "/imagens/hero/desenvolvimento-de-aplicativos.png",
+    mobileImage: "/imagens/hero/mobile/desenvolvimento-de-aplicativos.webp",
     accent: "#FF8500",
   },
   {
@@ -37,6 +40,7 @@ const SLIDES = [
     sublabel:
       "Receba uma demonstração interativa do seu produto antes de qualquer investimento.",
     image: "/imagens/hero/prototipo-gratuito.png",
+    mobileImage: "/imagens/hero/mobile/prototipo-gratuito.webp",
     accent: "#00C8FF",
   },
 ];
@@ -243,31 +247,42 @@ export default function HeroSlider() {
           </span>
         </div>
 
-        {/* Título */}
-        <h1
-          className="font-heading text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-4 text-center"
-          style={{
-            opacity: visible ? 1 : 0,
-            filter: visible ? "blur(0px)" : "blur(8px)",
-            transform: visible ? "translateY(0)" : "translateY(12px)",
-            transition: "opacity 0.55s ease, filter 0.55s ease, transform 0.55s ease",
-          }}
-        >
-          {slide.label.split("\n").map((line, i) =>
-            i === 1 ? (
-              <span
-                key={i}
-                className="bg-gradient-to-r from-[#00C8FF] via-[#0066FF] to-[#FF8500] bg-clip-text text-transparent block"
-              >
-                {line}
-              </span>
-            ) : (
-              <span key={i} className="block">{line}</span>
-            )
-          )}
-        </h1>
+        {/* Arte vertical para mobile com o título na área livre superior */}
+        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/60 border border-white/10 mb-8">
+          <Image
+            key={`mob-${slide.id}`}
+            src={slide.mobileImage}
+            alt={`Imagem ilustrativa para ${slide.label.replace("\n", " ")}`}
+            width={941}
+            height={1672}
+            sizes="100vw"
+            className="w-full h-auto block"
+            priority={current === 0}
+          />
+          <h1
+            className="absolute inset-x-4 top-[14%] z-10 text-center font-heading text-[clamp(1.65rem,7vw,2.5rem)] font-extrabold leading-[1.12] tracking-tight"
+            style={{
+              opacity: visible ? 1 : 0,
+              filter: visible ? "blur(0px)" : "blur(8px)",
+              transform: visible ? "translateY(0)" : "translateY(12px)",
+              transition: "opacity 0.55s ease, filter 0.55s ease, transform 0.55s ease",
+            }}
+          >
+            {slide.label.split("\n").map((line, i) =>
+              i === 1 ? (
+                <span
+                  key={i}
+                  className="bg-gradient-to-r from-[#00C8FF] via-[#0066FF] to-[#FF8500] bg-clip-text text-transparent block"
+                >
+                  {line}
+                </span>
+              ) : (
+                <span key={i} className="block">{line}</span>
+              )
+            )}
+          </h1>
+        </div>
 
-        {/* Subtexto */}
         <p
           className="text-base text-[#AAB8CD] leading-relaxed mb-8 text-center"
           style={{
@@ -279,20 +294,6 @@ export default function HeroSlider() {
         >
           {slide.sublabel}
         </p>
-
-        {/* Imagem */}
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/60 border border-white/10 mb-8">
-          <Image
-            key={`mob-${slide.id}`}
-            src={slide.image}
-            alt={slide.label.replace("\n", " ")}
-            width={1456}
-            height={816}
-            sizes="100vw"
-            className="w-full h-auto block hero-slide-img"
-            priority={current === 0}
-          />
-        </div>
 
         {/* Botões */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
