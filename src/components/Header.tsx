@@ -52,17 +52,18 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isMobileMenuOpen
-          ? "bg-[#030817]/[0.98] backdrop-blur-2xl border-b border-[#00C8FF]/15 py-3 shadow-lg shadow-black/30"
-          : isScrolled
-          ? "bg-[#030817]/85 backdrop-blur-md border-b border-[#00C8FF]/15 py-3 shadow-lg shadow-black/30"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isMobileMenuOpen
+            ? "bg-[#030817]/[0.98] backdrop-blur-2xl border-b border-[#00C8FF]/15 py-3 shadow-lg shadow-black/30"
+            : isScrolled
+            ? "bg-[#030817]/85 backdrop-blur-md border-b border-[#00C8FF]/15 py-3 shadow-lg shadow-black/30"
+            : "bg-transparent py-5"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between">
           {/* Logo VELTRIX */}
           <Link
             href="#inicio"
@@ -144,8 +145,9 @@ export default function Header() {
               )}
             </button>
           </div>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* Mobile Menu Drawer / Overlay */}
       <div
@@ -205,6 +207,6 @@ export default function Header() {
           </p>
         </div>
       </div>
-    </header>
+    </>
   );
 }
