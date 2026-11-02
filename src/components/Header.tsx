@@ -54,7 +54,9 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isMobileMenuOpen
+          ? "bg-[#030817]/[0.98] backdrop-blur-2xl border-b border-[#00C8FF]/15 py-3 shadow-lg shadow-black/30"
+          : isScrolled
           ? "bg-[#030817]/85 backdrop-blur-md border-b border-[#00C8FF]/15 py-3 shadow-lg shadow-black/30"
           : "bg-transparent py-5"
       }`}
@@ -147,7 +149,7 @@ export default function Header() {
 
       {/* Mobile Menu Drawer / Overlay */}
       <div
-        className={`fixed inset-0 top-[65px] bg-[#030817]/95 backdrop-blur-xl z-40 lg:hidden transition-all duration-300 flex flex-col justify-between px-6 py-8 border-t border-white/5 ${
+        className={`fixed inset-0 top-[65px] bg-[#030817]/[0.98] backdrop-blur-2xl z-40 lg:hidden shadow-[0_24px_60px_rgba(0,0,0,0.65)] transition-all duration-300 flex flex-col justify-between px-6 py-8 border-t border-[#00C8FF]/15 ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto translate-y-0"
             : "opacity-0 pointer-events-none -translate-y-4"

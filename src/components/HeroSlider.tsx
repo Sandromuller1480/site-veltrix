@@ -237,18 +237,8 @@ export default function HeroSlider() {
       {/* ══════════════════════════════════════════════
           MOBILE / TABLET: layout empilhado
           ══════════════════════════════════════════════ */}
-      <div className="lg:hidden flex flex-col pt-28 pb-16 px-4 sm:px-6">
-
-        {/* Badge */}
-        <div className="inline-flex self-center items-center gap-2 px-4 py-1.5 rounded-full bg-[#07142B]/90 border border-[#00C8FF]/25 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(0,200,255,0.15)]">
-          <span className="w-2 h-2 rounded-full bg-[#00C8FF] animate-pulse" />
-          <span className="text-xs font-semibold tracking-wide text-[#00C8FF]">
-            TECNOLOGIA COM IDENTIDADE
-          </span>
-        </div>
-
-        {/* Arte vertical para mobile com o título na área livre superior */}
-        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/60 border border-white/10 mb-8">
+      <div className="lg:hidden flex flex-col pb-16">
+        <div className="relative w-full overflow-hidden">
           <Image
             key={`mob-${slide.id}`}
             src={slide.mobileImage}
@@ -259,8 +249,16 @@ export default function HeroSlider() {
             className="w-full h-auto block"
             priority={current === 0}
           />
+          <div className="absolute inset-x-0 top-[14%] z-10 flex justify-center px-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#07142B]/90 px-4 py-1.5 shadow-[0_0_20px_rgba(0,200,255,0.15)] backdrop-blur-md border border-[#00C8FF]/25">
+              <span className="w-2 h-2 rounded-full bg-[#00C8FF] animate-pulse" />
+              <span className="text-xs font-semibold tracking-wide text-[#00C8FF]">
+                TECNOLOGIA COM IDENTIDADE
+              </span>
+            </div>
+          </div>
           <h1
-            className="absolute inset-x-4 top-[14%] z-10 text-center font-heading text-[clamp(1.65rem,7vw,2.5rem)] font-extrabold leading-[1.12] tracking-tight"
+            className="absolute inset-x-4 top-[23%] z-10 text-center font-heading text-[clamp(1.65rem,7vw,2.5rem)] font-extrabold leading-[1.12] tracking-tight"
             style={{
               opacity: visible ? 1 : 0,
               filter: visible ? "blur(0px)" : "blur(8px)",
@@ -283,65 +281,65 @@ export default function HeroSlider() {
           </h1>
         </div>
 
-        <p
-          className="text-base text-[#AAB8CD] leading-relaxed mb-8 text-center"
-          style={{
-            opacity: visible ? 1 : 0,
-            filter: visible ? "blur(0px)" : "blur(6px)",
-            transform: visible ? "translateY(0)" : "translateY(8px)",
-            transition: "opacity 0.55s ease 0.07s, filter 0.55s ease 0.07s, transform 0.55s ease 0.07s",
-          }}
-        >
-          {slide.sublabel}
-        </p>
-
-        {/* Botões */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
-          <Link
-            href="#projetos"
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-[#07142B] border border-[#00C8FF]/40 hover:border-[#00C8FF] hover:bg-[#0066FF]/15 transition-all duration-300 shadow-[0_4px_20px_rgba(0,102,255,0.2)] hover:-translate-y-0.5 focus:outline-none"
+        <div className="px-4 pt-6 sm:px-6">
+          <p
+            className="text-base text-[#AAB8CD] leading-relaxed mb-8 text-center"
+            style={{
+              opacity: visible ? 1 : 0,
+              filter: visible ? "blur(0px)" : "blur(6px)",
+              transform: visible ? "translateY(0)" : "translateY(8px)",
+              transition: "opacity 0.55s ease 0.07s, filter 0.55s ease 0.07s, transform 0.55s ease 0.07s",
+            }}
           >
-            <span>Conhecer projetos</span>
-            <ArrowRight className="w-4 h-4 text-[#00C8FF]" />
-          </Link>
+            {slide.sublabel}
+          </p>
 
-          <a
-            href={WHATSAPP_LINKS.geral}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#00C8FF] transition-all duration-300 shadow-[0_4px_25px_rgba(0,200,255,0.4)] hover:-translate-y-0.5 hover:brightness-110 focus:outline-none"
-          >
-            <MessageSquare className="w-4 h-4" />
-            <span>Conversar no WhatsApp</span>
-          </a>
-        </div>
-
-        {/* Dots */}
-        <div className="flex items-center justify-center gap-2" role="tablist">
-          {SLIDES.map((s, i) => (
-            <button
-              key={s.id}
-              role="tab"
-              aria-selected={i === current}
-              aria-label={`Slide ${s.label.replace("\n", " ")}`}
-              onClick={() => goTo(i)}
-              className="relative h-1 rounded-full overflow-hidden transition-all duration-300 focus:outline-none"
-              style={{
-                width: i === current ? 36 : 12,
-                background: "rgba(255,255,255,0.18)",
-              }}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
+            <Link
+              href="#projetos"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-[#07142B] border border-[#00C8FF]/40 hover:border-[#00C8FF] hover:bg-[#0066FF]/15 transition-all duration-300 shadow-[0_4px_20px_rgba(0,102,255,0.2)] hover:-translate-y-0.5 focus:outline-none"
             >
-              {i === current && (
-                <span
-                  className="absolute inset-y-0 left-0 rounded-full"
-                  style={{
-                    background: slide.accent,
-                    animation: `slideProgress ${INTERVAL_MS}ms linear`,
-                  }}
-                />
-              )}
-            </button>
-          ))}
+              <span>Conhecer projetos</span>
+              <ArrowRight className="w-4 h-4 text-[#00C8FF]" />
+            </Link>
+
+            <a
+              href={WHATSAPP_LINKS.geral}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#00C8FF] transition-all duration-300 shadow-[0_4px_25px_rgba(0,200,255,0.4)] hover:-translate-y-0.5 hover:brightness-110 focus:outline-none"
+            >
+              <MessageSquare className="w-4 h-4" />
+              <span>Conversar no WhatsApp</span>
+            </a>
+          </div>
+
+          <div className="flex items-center justify-center gap-2" role="tablist">
+            {SLIDES.map((s, i) => (
+              <button
+                key={s.id}
+                role="tab"
+                aria-selected={i === current}
+                aria-label={`Slide ${s.label.replace("\n", " ")}`}
+                onClick={() => goTo(i)}
+                className="relative h-1 rounded-full overflow-hidden transition-all duration-300 focus:outline-none"
+                style={{
+                  width: i === current ? 36 : 12,
+                  background: "rgba(255,255,255,0.18)",
+                }}
+              >
+                {i === current && (
+                  <span
+                    className="absolute inset-y-0 left-0 rounded-full"
+                    style={{
+                      background: slide.accent,
+                      animation: `slideProgress ${INTERVAL_MS}ms linear`,
+                    }}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
