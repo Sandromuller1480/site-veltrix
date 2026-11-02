@@ -149,11 +149,16 @@ export default function Header() {
 
       {/* Mobile Menu Drawer / Overlay */}
       <div
-        className={`fixed inset-0 top-[65px] bg-[#030817]/[0.98] backdrop-blur-2xl z-40 lg:hidden shadow-[0_24px_60px_rgba(0,0,0,0.65)] transition-all duration-300 flex flex-col justify-between px-6 py-8 border-t border-[#00C8FF]/15 ${
+        className={`fixed inset-0 top-[65px] z-40 lg:hidden shadow-[0_24px_60px_rgba(0,0,0,0.65)] transition-all duration-300 flex flex-col justify-between px-6 py-8 border-t border-[#00C8FF]/15 ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto translate-y-0"
             : "opacity-0 pointer-events-none -translate-y-4"
         }`}
+        style={{
+          backgroundColor: "rgba(3, 8, 23, 0.5)",
+          backdropFilter: "blur(50px)",
+          WebkitBackdropFilter: "blur(50px)",
+        }}
       >
         <nav
           className="flex flex-col space-y-3"
