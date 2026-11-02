@@ -18,7 +18,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#07142B]/90 border border-[#00C8FF]/25 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(0,200,255,0.15)]">
               <span className="w-2 h-2 rounded-full bg-[#00C8FF] animate-pulse" />
               <span className="text-xs sm:text-sm font-semibold tracking-wide text-[#00C8FF]">
-                TECNOLOGIA COM IDENTIDADE
+                SOLUÇÕES DIGITAIS
               </span>
               <span className="text-[#AAB8CD]/50 hidden sm:inline">•</span>
               <span className="text-xs text-[#AAB8CD] hidden sm:inline">VELTRIX Digital Solutions</span>
